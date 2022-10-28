@@ -1,0 +1,21 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    width: 1120px;
+    margin: 0 auto;
+    height: 100px;
+    align-items: center;
+
+}
+
+.header > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;;
+    gap: 1rem;
+}
+
+.header-links {
+    display: flex;
+    gap: 2rem;
+}

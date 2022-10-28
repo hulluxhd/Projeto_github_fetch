@@ -4,12 +4,20 @@ const userSlice = createSlice({
     name: 'user',
     initialState: {
         repos: [],
-        isLoading: false
+        isLoading: false,
+        userName: "hulluxhd",
+        userInfo: {
+            avatar_url: "",
+            blog: ""
+       }
     },
     reducers: {
         fetchData: (state, action) => {
             state.repos = action.payload
         },
+        changeUserName: (state, action) => void (state.userName = action.payload),
+        setUserInfo: (state, action) => void (state.userInfo = action.payload),
+        setIsLoading: (state, action) => void (state.isLoading = action.payload)
     }
 })
 
@@ -25,19 +33,21 @@ export const fetchDataAction = (payload) => {
 
 export const isLoadingAction = (payload) => {
     return {
-        type: "user/isLoading",
+        type: "user/setIsLoading",
         payload
     }
 }
 
 // REDUCERS
 
-export const { fetchData } = userSlice.actions
+export const { fetchData, changeUserName } = userSlice.actions
 
 // SELECTORS
 
-export const reposSelector = (state) => state.repos
-export const isLoadingSelector = (state) => state.isLoading
+export const avatarSelector = (state) => state.user.userInfo.avatar_url
+export const reposSelector = (state) => state.user.repos
+export const userNameSelector = (state) => state.user.userName
+export const isLoadingSelector = (state) =>state.user.isLoading
 
 
 

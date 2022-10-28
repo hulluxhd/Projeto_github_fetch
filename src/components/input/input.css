@@ -1,0 +1,36 @@
+.input-container {
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+    width: 900px;
+    height: 40px;
+}
+
+.input-container input {
+    width: 400px;
+    border-radius: 8px;
+    border: none;
+    outline-color: rgb(149, 149, 197); 
+    outline-style: solid;
+    outline-width: 1px;
+    padding-left: 0.5rem;
+}
+
+.input-container input:focus {
+    outline-color: rgb(124, 124, 197); 
+    outline-width: 2px;
+}
+
+.input-component-button {
+    border-radius: 8px;
+    padding: 0 3rem ;
+    border: none;
+    background-color: rgb(149, 149, 197);  
+    color: #FFF;
+    font-weight: bold;  
+    transition: opacity 0.2s ease-in-out;
+}
+
+.input-component-button:hover{
+    opacity: 0.8;
+}

@@ -1,0 +1,35 @@
+.card-container {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    overflow: hidden;
+    justify-content: space-between;
+    border: 2px solid rgb(149, 149, 197);
+    padding: 1rem;
+    margin: 1rem 0.5rem;
+    border-radius: 1rem;
+    gap: 0.5rem;
+}
+
+.card-container a {
+    text-decoration: none;
+    color: rgb(149, 149, 197);
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.card-container a:active {
+    color: red;
+}
+
+.card-container p {
+    font-size: 0.9rem;
+}
+
+.card-language {
+    font-weight: bold;
+}
+
+.card-fav-icon {
+    cursor: pointer;
+}
