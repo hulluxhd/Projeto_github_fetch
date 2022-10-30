@@ -11,17 +11,6 @@
     gap: 0.5rem;
 }
 
-.card-container a {
-    text-decoration: none;
-    color: rgb(149, 149, 197);
-    font-weight: bold;
-    font-size: 1rem;
-}
-
-.card-container a:active {
-    color: red;
-}
-
 .card-container p {
     font-size: 0.9rem;
 }
@@ -32,4 +21,10 @@
 
 .card-fav-icon {
     cursor: pointer;
+}
+
+.card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }

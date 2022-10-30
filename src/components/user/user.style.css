@@ -1,0 +1,23 @@
+.user-container {
+    display: flex;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 8px;
+}
+
+.user-container > img {
+    width: 100px;
+    border-radius: 50%;
+    border: 1px solid green;
+    outline-style: solid;
+    outline-color: rgb(112, 112, 151); 
+    outline-width: 4px;
+}
+
+.user-info{
+    padding: 1rem;
+}
+
+.user-name {
+    color: #949996;
+}

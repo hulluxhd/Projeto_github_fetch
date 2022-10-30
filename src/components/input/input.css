@@ -6,7 +6,8 @@
     height: 40px;
 }
 
-.input-container input {
+.input-style {
+    height: 100%;
     width: 400px;
     border-radius: 8px;
     border: none;
@@ -16,7 +17,7 @@
     padding-left: 0.5rem;
 }
 
-.input-container input:focus {
+.input-style:focus {
     outline-color: rgb(124, 124, 197); 
     outline-width: 2px;
 }
@@ -33,4 +34,11 @@
 
 .input-component-button:hover{
     opacity: 0.8;
+}
+
+.input-error {
+    font-size: 0.8rem;
+    color: rgb(228, 95, 95);
+    padding: 0.5rem;
+    font-weight: bold;
 }

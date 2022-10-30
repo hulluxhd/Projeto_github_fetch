@@ -5,7 +5,6 @@ import { ProjectCard } from "../projectCard";
 export function ProjectList() {
     const repos = useSelector(reposSelector)
     const loading = useSelector(isLoadingSelector)
-    console.log(loading)
 
     if (loading) {
         return <h1>loading...</h1>
@@ -13,11 +12,11 @@ export function ProjectList() {
 
     return (
 
-        <div style={{
+        <section style={{
             display: "flex",
             flexWrap: "wrap",
             justifyContent: "center"
-        }}>{repos?.map(repo => <ProjectCard key={repo.id} repo={repo} />)}</div>
+        }}>{repos?.map(repo => <ProjectCard key={repo.id} repo={repo} />)}</section>
 
     )
 }

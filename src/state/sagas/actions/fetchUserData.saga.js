@@ -15,19 +15,22 @@ export function* fetchUserData() {
 
     const user = yield select(userNameSelector)
 
+    if(!user) throw Error("There is no user selected")
+
     try {
 
         const userInfoResults = yield call(api.get, `${user}`)
 
+        console.log(userInfoResults.data.avatar_url, userInfoResults.data.blog)
+
         const userInfo = {
             avatar_url: userInfoResults.data.avatar_url,
-            blog: userInfoResults.data.blog
+            blog: userInfoResults.data.blog,
+            name: userInfoResults.data.name,
         }
 
         yield put({ type: "user/setUserInfo", payload: userInfo })
         
-        console.log(userInfo.data.avatar_url)
-
         const results = yield call(api.get, `${user}/${routes.REPOS}`)
 
         const dataWithParams = results.data?.map(repo => {
@@ -47,6 +50,7 @@ export function* fetchUserData() {
         yield put(fetchDataAction(dataWithParams))
     } catch (e) {
         alert(e)
+        console.error(e)
     }
     yield put(isLoadingAction(false))
 

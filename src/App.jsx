@@ -7,6 +7,7 @@ import { Wrapper900px } from "./components/wrapper/Wrapper900px"
 import { ProjectList } from "./components/projects/projectList"
 import "./index.css"
 import { avatarSelector } from "./state/slices/user.slice"
+import { User } from "./components/user"
 
 function App() {
   const dispatch = useDispatch()
@@ -14,7 +15,7 @@ function App() {
   console.log(users)
 
   useEffect(() => {
-    dispatch({ type: patterns.FETCH_USER_DATA})
+    dispatch({ type: patterns.FETCH_USER_DATA })
   }, [])
 
 
@@ -22,11 +23,11 @@ function App() {
 
   return (
     <div className="App">
-      <img src={users}/>
       <Header />
       <Input />
       <Wrapper900px>
-        <ProjectList/>
+        <User />
+        <ProjectList />
       </Wrapper900px>
     </div>
   )
