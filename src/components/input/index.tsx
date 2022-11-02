@@ -1,26 +1,26 @@
 import { useCallback, useState } from "react"
-import { useDispatch, useSelector } from "react-redux"
 import { patterns } from "../../state/sagas/patterns"
-import { changeUserName, searchUserSelector, swapUser, userNameSelector } from "../../state/slices/user.slice"
+import { changeUserName } from "../../state/slices/user.slice"
+import { useAppDispatch } from "../../state/store/hooks"
 import "./input.css"
 
-export function Input() {
+export function Input(): JSX.Element {
 
-    const [userName, setUsername] = useState("")
-    const [error, setError] = useState("")
+    const [userName, setUsername] = useState<string>("")
+    const [error, setError] = useState<string>("")
 
 
-    const dispatch = useDispatch()
+    const dispatch = useAppDispatch()
 
     console.log(userName)
 
-    const handleInputChange = useCallback(e => {
-        setUsername(e.target.value)
-            , [userName]
-    })
+    const handleInputChange = useCallback((e: any): void => {
+        const value = (e.target as HTMLInputElement).value
+        setUsername(value)
+    }, [dispatch, userName])
 
 
-    const handleUserName = () => {
+    const handleUserName = (): void => {
 
         if (!userName) {
             return setError("Por favor, insira um nome de usuário.")
@@ -44,7 +44,6 @@ export function Input() {
                     onChange={(e) => handleInputChange(e)}
                     placeholder="Procure um nome de usuário..." />
                 {error ? <p className="input-error">{error}</p> : null}
-                {console.log(error)}
             </div>
             <button onClick={handleUserName} className="input-component-button">Pesquisar</button>
         </div>

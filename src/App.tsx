@@ -1,4 +1,3 @@
-import { useDispatch, useSelector } from "react-redux"
 import { patterns } from "./state/sagas/patterns"
 import { useEffect } from "react"
 import { Input } from "./components/input"
@@ -6,13 +5,11 @@ import { Header } from "./components/header"
 import { Wrapper900px } from "./components/wrapper/Wrapper900px"
 import { ProjectList } from "./components/projects/projectList"
 import "./index.css"
-import { avatarSelector } from "./state/slices/user.slice"
 import { User } from "./components/user"
+import { useAppDispatch } from "./state/store/hooks"
 
 function App() {
-  const dispatch = useDispatch()
-  const users = useSelector(avatarSelector)
-  console.log(users)
+  const dispatch = useAppDispatch()
 
   useEffect(() => {
     dispatch({ type: patterns.FETCH_USER_DATA })
