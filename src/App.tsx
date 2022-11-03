@@ -4,9 +4,9 @@ import { Input } from "./components/input"
 import { Header } from "./components/header"
 import { Wrapper900px } from "./components/wrapper/Wrapper900px"
 import { ProjectList } from "./components/projects/projectList"
-import "./index.css"
 import { User } from "./components/user"
 import { useAppDispatch } from "./state/store/hooks"
+import "./index.css"
 
 function App() {
   const dispatch = useAppDispatch()
@@ -14,10 +14,7 @@ function App() {
   useEffect(() => {
     dispatch({ type: patterns.FETCH_USER_DATA })
   }, [])
-
-
-
-
+  
   return (
     <div className="App">
       <Header />
